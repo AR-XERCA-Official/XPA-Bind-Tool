@@ -1,1 +1,579 @@
+/* ============================================================
+   DROGON BIND TOOL - WEB EDITION
+   Black & Red Theme - Worm GPT Style
+   ============================================================ */
 
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Cairo', 'Orbitron', monospace;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+    background: #cc0000;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ff0000;
+}
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background: #0d0d0d;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 25px 30px 20px;
+    box-shadow: 0 0 60px rgba(204, 0, 0, 0.08), inset 0 0 60px rgba(204, 0, 0, 0.02);
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #cc0000, transparent);
+    opacity: 0.6;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dragon-logo pre {
+    color: #cc0000;
+    font-size: 10px;
+    line-height: 1.1;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 20px rgba(204, 0, 0, 0.15);
+    margin: 0 auto;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+.header-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 8px;
+    font-size: 13px;
+    font-family: 'Orbitron', monospace;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 8px 0;
+}
+
+.developer {
+    color: #cc0000;
+    font-weight: 700;
+}
+
+.status {
+    color: #00cc66;
+}
+
+/* ============================================================
+   SUBTITLE
+   ============================================================ */
+.subtitle {
+    text-align: center;
+    color: #cc0000;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 10px 0 15px;
+    border-bottom: 1px solid #1a1a1a;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', monospace;
+}
+
+.subtitle .gold {
+    color: #cc8800;
+    margin-right: 8px;
+}
+
+/* ============================================================
+   TOKEN SECTION
+   ============================================================ */
+.token-section {
+    background: #111111;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.input-group label {
+    color: #cc0000;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+    white-space: nowrap;
+}
+
+.token-input {
+    flex: 1;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.token-input:focus {
+    border-color: #cc0000;
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.1);
+}
+
+.token-input::placeholder {
+    color: #444;
+}
+
+.btn-clear {
+    background: #1a1a1a;
+    border: none;
+    color: #666;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.btn-clear:hover {
+    background: #cc0000;
+    color: #fff;
+}
+
+.token-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    background: transparent;
+    border: 1px solid #cc0000;
+    color: #cc0000;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Orbitron', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.btn-action:hover {
+    background: #cc0000;
+    color: #0a0a0a;
+    box-shadow: 0 0 30px rgba(204, 0, 0, 0.2);
+}
+
+/* ============================================================
+   MENU GRID
+   ============================================================ */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-btn {
+    background: #111111;
+    border: 1px solid #1a1a1a;
+    border-radius: 6px;
+    padding: 12px 16px;
+    color: #aaa;
+    font-family: 'Cairo', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-btn:hover {
+    border-color: #cc0000;
+    color: #fff;
+    background: #1a0a0a;
+    box-shadow: 0 0 30px rgba(204, 0, 0, 0.05);
+}
+
+.menu-btn .num {
+    color: #cc0000;
+    font-weight: 900;
+    font-size: 14px;
+    min-width: 22px;
+}
+
+.menu-btn:active {
+    transform: scale(0.97);
+}
+
+/* ============================================================
+   INPUT SECTION (Dynamic)
+   ============================================================ */
+.input-section {
+    margin-bottom: 20px;
+}
+
+.input-card {
+    background: #111111;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    padding: 18px 20px;
+}
+
+.input-card label {
+    display: block;
+    color: #cc0000;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-family: 'Orbitron', monospace;
+}
+
+.input-card input {
+    width: 100%;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+    margin-bottom: 10px;
+}
+
+.input-card input:focus {
+    border-color: #cc0000;
+}
+
+.input-card .btn-submit {
+    background: #cc0000;
+    border: none;
+    color: #0a0a0a;
+    padding: 10px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Orbitron', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.input-card .btn-submit:hover {
+    background: #ff0000;
+    box-shadow: 0 0 40px rgba(204, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
+.input-card .btn-cancel {
+    background: transparent;
+    border: 1px solid #333;
+    color: #666;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Orbitron', monospace;
+    font-size: 13px;
+    transition: all 0.3s;
+    margin-left: 8px;
+}
+
+.input-card .btn-cancel:hover {
+    border-color: #cc0000;
+    color: #cc0000;
+}
+
+.input-card .input-hint {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* ============================================================
+   OUTPUT SECTION
+   ============================================================ */
+.output-section {
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    background: #111111;
+    border-bottom: 1px solid #1a1a1a;
+    font-family: 'Orbitron', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #cc0000;
+}
+
+.output-icon {
+    color: #cc0000;
+    margin-right: 8px;
+}
+
+.btn-clear-output {
+    background: transparent;
+    border: none;
+    color: #444;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Orbitron', monospace;
+    transition: color 0.3s;
+}
+
+.btn-clear-output:hover {
+    color: #cc0000;
+}
+
+.output-content {
+    padding: 16px 18px;
+    min-height: 150px;
+    max-height: 500px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #c0c0c0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.output-placeholder {
+    color: #333;
+}
+
+/* ============================================================
+   OUTPUT COLORS
+   ============================================================ */
+.output-content .success {
+    color: #00cc66;
+}
+.output-content .error {
+    color: #cc0000;
+}
+.output-content .info {
+    color: #3399ff;
+}
+.output-content .gold {
+    color: #cc8800;
+}
+.output-content .dim {
+    color: #444;
+}
+.output-content .red {
+    color: #cc0000;
+}
+.output-content .white {
+    color: #e0e0e0;
+}
+.output-content .green {
+    color: #00cc66;
+}
+.output-content .cyan {
+    color: #33ccff;
+}
+.output-content .yellow {
+    color: #cccc00;
+}
+.output-content .magenta {
+    color: #cc66cc;
+}
+.output-content .bold {
+    font-weight: 700;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+    text-align: center;
+    padding-top: 18px;
+    margin-top: 15px;
+    border-top: 1px solid #1a1a1a;
+    font-size: 12px;
+    color: #555;
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 0.5px;
+}
+
+.footer .gold {
+    color: #cc8800;
+}
+.footer .red {
+    color: #cc0000;
+}
+.footer .dim {
+    color: #333;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .dragon-logo pre {
+        font-size: 6px;
+    }
+
+    .header-info {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 11px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .menu-btn {
+        font-size: 11px;
+        padding: 10px 12px;
+    }
+
+    .input-group {
+        flex-wrap: wrap;
+    }
+
+    .token-actions {
+        flex-direction: column;
+    }
+
+    .btn-action {
+        width: 100%;
+        text-align: center;
+    }
+
+    .output-content {
+        font-size: 11px;
+        max-height: 300px;
+    }
+
+    .subtitle {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dragon-logo pre {
+        font-size: 4px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+
+    .menu-btn {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
+    .menu-btn .num {
+        min-width: 16px;
+        font-size: 11px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes pulse-red {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.pulse {
+    animation: pulse-red 1.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px rgba(204, 0, 0, 0.2); }
+    50% { text-shadow: 0 0 30px rgba(204, 0, 0, 0.5); }
+}
+
+.glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Loading spinner */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #1a1a1a;
+    border-top-color: #cc0000;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
