@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>—͞𝑨𝑩𝑫𝑶𝑿 𝑩𝑰𝑵𝑫 𝑻𝑶𝑶𝑳</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="dragon-logo">
+                <pre>
+╔══════════════════════════════════════════════════════════╗
+║                                                          ║
+║      ██╗  ██╗███████╗██████╗  █████╗ ███████╗         ║
+║      ╚██╗██╔╝██╔════╝██╔══██╗██╔══██╗██╔════╝         ║
+║       ╚███╔╝ █████╗  ██████╔╝███████║███████╗         ║
+║       ██╔██╗ ██╔══╝  ██╔══██╗██╔══██║╚════██║         ║
+║      ██╔╝ ██╗███████╗██║  ██║██║  ██║███████║         ║
+║      ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝         ║
+║                                                          ║
+║         🚀  X E R C A  B I N D  T O O L  🚀            ║
+╚══════════════════════════════════════════════════════════╝
+                </pre>
+            </div>
+            <div class="header-info">
+                <span class="developer">🐉 DEVELOPER: @AR_X_E</span>
+                <span class="status">⚡ STATUS: PREMIUM & SECURE</span>
+            </div>
+        </div>
 
+        <!-- SUBTITLE -->
+        <div class="subtitle">
+            <span class="gold">▶</span> —͞𝑨𝑩𝑫𝑶𝑿 𝑩𝑰𝑵𝑫 𝑻𝑶𝑶𝑳  <input type="text" id="accessToken" placeholder="Paste your Access Token here..." class="token-input">
+                <button onclick="clearToken()" class="btn-clear">✕</button>
+            </div>
+            <div class="token-actions">
+                <button onclick="fetchBindInfo()" class="btn-action">📊 CHECK BIND</button>
+                <button onclick="fetchBoundAccounts()" class="btn-action">🔗 BOUND ACCOUNTS</button>
+            </div>
+        </div>
+
+        <!-- MENU GRID -->
+        <div class="menu-grid">
+            <button class="menu-btn" onclick="showInput('bind-email')">
+                <span class="num">1</span> BIND EMAIL
+            </button>
+            <button class="menu-btn" onclick="showInput('unbind-email')">
+                <span class="num">2</span> UNBIND EMAIL
+            </button>
+            <button class="menu-btn" onclick="showInput('change-bind')">
+                <span class="num">3</span> CHANGE BIND
+            </button>
+            <button class="menu-btn" onclick="executeAction('cancel-bind')">
+                <span class="num">4</span> CANCEL BIND
+            </button>
+            <button class="menu-btn" onclick="showInput('eat-to-token')">
+                <span class="num">5</span> EAT → TOKEN
+            </button>
+            <button class="menu-btn" onclick="executeAction('revoke-token')">
+                <span class="num">6</span> REVOKE TOKEN
+            </button>
+            <button class="menu-btn" onclick="showInput('login-history')">
+                <span class="num">7</span> LOGIN HISTORY
+            </button>
+            <button class="menu-btn" onclick="executeAction('token-to-jwt')">
+                <span class="num">8</span> TOKEN → JWT
+            </button>
+            <button class="menu-btn" onclick="executeAction('ban-account')">
+                <span class="num">9</span> ⚠️ BAN ACCOUNT
+            </button>
+            <button class="menu-btn" onclick="showOwnerDetails()">
+                <span class="num">10</span> OWNER DETAILS
+            </button>
+        </div>
+
+        <!-- DYNAMIC INPUT SECTION -->
+        <div id="inputSection" class="input-section" style="display:none;">
+            <div class="input-card">
+                <div id="inputContent"></div>
+            </div>
+        </div>
+
+        <!-- OUTPUT SECTION -->
+        <div id="outputSection" class="output-section">
+            <div class="output-header">
+                <span class="output-icon">▸</span> OUTPUT
+                <button onclick="clearOutput()" class="btn-clear-output">✕ CLEAR</button>
+            </div>
+            <div id="outputContent" class="output-content">
+                <div class="output-placeholder">
+                    <span class="dim">┌─────────────────────────────────────────┐</span><br>
+                    <span class="dim">│  Ready for commands...                  │</span><br>
+                    <span class="dim">│  Enter a token and select an action     │</span><br>
+                    <span class="dim">└─────────────────────────────────────────┘</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span class="gold">◈</span>  —͞𝑨𝑩𝑫𝑶𝑿 𝑩𝑰𝑵𝑫 𝑻𝑶𝑶𝑳 v3.0 <span class="gold">◈</span>
+            <span class="dim">|</span> Developed by <span class="red">https://t.me/FF720H</span>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
